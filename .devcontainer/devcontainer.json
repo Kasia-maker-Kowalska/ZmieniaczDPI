@@ -1,9 +1,6 @@
 {
-    "name": "Android",
-    "image": "mcr.microsoft.com/devcontainers/java:17",
-    "features": {
-        "ghcr.io/devcontainers/features/android-sdk:1": {}
-    },
-    "forwardPorts": [],
-    "postCreateCommand": "sdkmanager --install \"platform-tools\" \"platforms;android-34\" \"build-tools;34.0.0\""
+  "name": "Java & Android SDK",
+  "image": "mcr.microsoft.com/vscode/devcontainers/java:17-bullseye",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y wget unzip && wget https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip && unzip commandlinetools-linux-9477386_latest.zip -d android-sdk && sudo mkdir -p /usr/lib/android-sdk && sudo mv android-sdk/* /usr/lib/android-sdk && rm commandlinetools-linux-9477386_latest.zip && yes | sudo /usr/lib/android-sdk/cmdline-tools/bin/sdkmanager --licenses && sudo /usr/lib/android-sdk/cmdline-tools/bin/sdkmanager \"platform-tools\" \"platforms;android-34\" \"build-tools;34.0.0\"",
+  "remoteUser": "vscode"
 }
