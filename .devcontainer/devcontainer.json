@@ -1,0 +1,9 @@
+{
+    "name": "Android",
+    "image": "mcr.microsoft.com/devcontainers/java:17",
+    "features": {
+        "ghcr.io/devcontainers/features/android-sdk:1": {}
+    },
+    "forwardPorts": [],
+    "postCreateCommand": "sdkmanager --install \"platform-tools\" \"platforms;android-34\" \"build-tools;34.0.0\""
+}
